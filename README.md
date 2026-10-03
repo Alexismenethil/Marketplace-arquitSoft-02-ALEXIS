@@ -12,19 +12,34 @@
 | **Docente** | Ing. Lizbeth Jaico Quispe |
 | **Estudiante** | Alexis Huamani Rivera |
 | **Caso de Estudio** | GoPet (referencia funcional) |
-| **Entregable** | Laboratorio 02 – Análisis del Sistema y Arquitectura Inicial |
+| **Entregable** | Guía 02: análisis y arquitectura inicial; Guía 03: decisiones, estilo y enfoque arquitectónico |
 
 ---
 
 ## 📖 Descripción General
 
-Este proyecto desarrolla la propuesta arquitectónica de un **Marketplace de Productos para Mascotas**, diseñado bajo un enfoque de **tres capas** e integración con servicios externos. La plataforma permite a los dueños de mascotas (clientes) explorar, comparar y comprar productos, a los vendedores (sellers) gestionar sus productos y ventas, y a los administradores gestionar integralmente la plataforma.
+Este proyecto desarrolla la propuesta arquitectónica de un **Marketplace de Productos para Mascotas**, con un **backend monolítico modular**, organización en tres capas e integración con servicios externos. La plataforma permite a los dueños de mascotas (clientes) explorar, comparar y comprar productos, a los vendedores (sellers) gestionar sus productos y ventas, y a los administradores gestionar integralmente la plataforma. Clean Architecture se registra como enfoque para definir las dependencias internas en el paso 5 de la Guía 03.
+
+---
+
+## 🏛️ Decisiones y estilo arquitectónico — Guía 03
+
+El backend propuesto agrupa **Usuarios, Sellers, Catálogo, Carrito y Pedidos** en una única unidad de despliegue. Pedidos coordina pagos y envíos mediante adaptadores. El gráfico replica la estructura del ejemplo de la página 8 de la guía.
+
+![Monolito modular en tres capas](./arquitectura/diagrama-estilo-arquitectonico.png)
+
+- [Decisiones arquitectónicas — paso 3](./analisis-de-sistema/07-%20decisiones-arquitect%C3%B3nicas.md).
+- [Estilo arquitectónico y justificación — paso 4](./arquitectura/estilo-arquitectonico.md).
+- [Enfoque Clean Architecture y dependencias — paso 5](./arquitectura/enfoque/enfoque-arquitectonico.md).
+- [Diagrama editable en SVG](./arquitectura/diagrama-estilo-arquitectonico.svg) · [PDF](./arquitectura/diagrama-estilo-arquitectonico.pdf).
+
+El diagrama describe la propuesta del backend. La carpeta `boilerplate/` contiene el ejemplo Angular con adaptadores en memoria para estudiar Clean Architecture; no implementa el backend representado.
 
 ---
 
 ## 🏛️ Vista de la Arquitectura Inicial
 
-La solución se estructura en tres capas principales complementadas con integraciones hacia servicios externos:
+Como antecedente de la Guía 02, la arquitectura inicial se estructura en tres capas principales complementadas con integraciones hacia servicios externos:
 
 ![Diagrama de Arquitectura](./arquitectura/diagrama-arquitectura.png)
 
@@ -47,11 +62,22 @@ La solución se estructura en tres capas principales complementadas con integrac
 │   ├── 03-requisitos-funcionales.md
 │   ├── 04-atributos-de-calidad.md
 │   ├── 05-restricciones.md
-│   └── 06-driver-arquitectonicos.md
-└── arquitectura/
-    ├── arquitectura-inicial.md
-    ├── arquitectura-inicial.html
-    └── diagrama-arquitectura.png
+│   ├── 06-driver-arquitectonicos.md
+│   └── 07- decisiones-arquitectónicas.md
+├── arquitectura/
+│   ├── arquitectura-inicial.md
+│   ├── arquitectura-inicial.html
+│   ├── diagrama-arquitectura.png
+│   ├── estilo-arquitectonico.md
+│   ├── diagrama-estilo-arquitectonico.svg
+│   ├── diagrama-estilo-arquitectonico.png
+│   ├── diagrama-estilo-arquitectonico.pdf
+│   └── enfoque/
+│       ├── enfoque-arquitectonico.md
+│       ├── diagrama-enfoque-arquitectonico.svg
+│       ├── diagrama-enfoque-arquitectonico.png
+│       └── diagrama-enfoque-arquitectonico.pdf
+└── boilerplate/                 # Ejemplo Angular de la guía
 ```
 
 ### Detalle de Documentos
@@ -63,8 +89,11 @@ La solución se estructura en tres capas principales complementadas con integrac
 - [**04. Atributos de Calidad:**](./analisis-de-sistema/04-atributos-de-calidad.md) Escenarios de rendimiento, disponibilidad, escalabilidad, seguridad y modificabilidad.
 - [**05. Restricciones:**](./analisis-de-sistema/05-restricciones.md) Restricciones técnicas, de integración y de diseño del sistema.
 - [**06. Drivers Arquitectónicos:**](./analisis-de-sistema/06-driver-arquitectonicos.md) Puntos de decisión clave que orientan la arquitectura.
+- [**07. Decisiones Arquitectónicas:**](./analisis-de-sistema/07-%20decisiones-arquitect%C3%B3nicas.md) Decisiones, alternativas y consecuencias relacionadas con los drivers.
 
 #### 2. Diseño de Arquitectura (`arquitectura/`)
+- [**Estilo Arquitectónico:**](./arquitectura/estilo-arquitectonico.md) Monolito modular, justificación y réplica del gráfico de la Guía 03.
+- [**Enfoque Arquitectónico:**](./arquitectura/enfoque/enfoque-arquitectonico.md) Clean Architecture, responsabilidades de las cuatro capas y dependencias hacia el núcleo.
 - [**Propuesta de Arquitectura Inicial:**](./arquitectura/arquitectura-inicial.md) Descripción de componentes y capas del sistema.
 - [**Diagrama Interactivo (Archify):**](./arquitectura/arquitectura-inicial.html) Modelo interactivo de arquitectura.
 - [**Diagrama de Arquitectura:**](./arquitectura/diagrama-arquitectura.png) Imagen representativa del diseño en capas.
