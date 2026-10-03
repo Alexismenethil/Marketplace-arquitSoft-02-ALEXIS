@@ -1,0 +1,16 @@
+# Dependencias de Node.js en cualquier carpeta del repositorio
+node_modules/
+
+# Compilaciones, pruebas y cache de Angular
+dist/
+dist-pruebas/
+out-tsc/
+.angular/
+coverage/
+
+# Logs de gestores de paquetes y archivos del sistema
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.DS_Store
+Thumbs.db
